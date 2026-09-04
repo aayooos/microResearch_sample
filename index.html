@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#438493">
+<title>Micro Research Healthcare | Pathology & Diagnostic Center</title>
+<style>
+:root{--ink:#192b39;--teal:#438493;--teal2:#e8f7f6;--mint:#f5fbfb;--line:#dcecef;--muted:#58707d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.58 Inter,Arial,sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}
+.top{height:4px;background:#292c2f}
+header{height:76px;display:flex;align-items:center;border-bottom:1px solid #e4eeee;background:#fffffff2;backdrop-filter:blur(12px);position:sticky;top:0;z-index:10}
+.nav{display:flex;width:100%;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;line-height:1.05}
+.logo{width:38px;height:38px;border-radius:12px;background:var(--teal);display:grid;place-items:center;color:white;font-size:1.6rem}
+.brand small{display:block;font-size:.66rem;color:#71828a;margin-top:4px;letter-spacing:.02em}
+.links{display:flex;align-items:center;gap:26px;font-size:.9rem;font-weight:700;color:#52626b}
+.links a:hover{color:var(--teal)}
+.button{display:inline-flex;align-items:center;justify-content:center;border:0;background:var(--teal);border-radius:999px;color:white;padding:.85rem 1.2rem;font-weight:800;cursor:pointer;transition:.2s}
+.button:hover{transform:translateY(-2px);box-shadow:0 9px 20px #29505d35}
+.button.light{color:var(--teal);background:white;border:1px solid #badadd}
+.hamb{display:none;background:none;border:0;font-size:1.5rem}
+.hero{background:linear-gradient(115deg,#e9f8f7 0%,#fbffff 62%,#effafa);overflow:hidden}
+.hero-in{min-height:560px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:50px}
+.eyebrow{color:#387b8b;font-size:.76rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.hero h1{font-size:clamp(3.1rem,6vw,5.5rem);line-height:.93;letter-spacing:-.078em;margin:18px 0 24px}
+.hero h1 i{font-style:normal;color:var(--teal)}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:500px;margin:0 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.visual{position:relative;height:390px}
+.photo{position:absolute;inset:28px 0 0 25px;border-radius:28px;overflow:hidden;background:#387987;box-shadow:0 26px 45px #17475323}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo:after{display:none}
+.tag{position:absolute;z-index:2;background:#fff;border-radius:12px;padding:11px 14px;box-shadow:0 10px 22px #23454f20;font-size:.8rem;font-weight:800}
+.t1{top:18px;right:-7px}
+.t2{bottom:18px;left:0}
+.check{color:var(--teal)}
+.trust{border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-top:21px;padding-bottom:21px;gap:16px}
+.trust div{font-size:.83rem;font-weight:750;color:#49606a}
+.trust span{display:inline-grid;place-items:center;border-radius:9px;width:31px;height:31px;background:var(--teal2);color:var(--teal);margin-right:8px}
+section{padding:85px 0}
+.heading{max-width:680px}
+.heading h2{font-size:clamp(2.1rem,4vw,3.4rem);letter-spacing:-.065em;line-height:1.04;margin:11px 0 13px}
+.heading p{margin:0;color:var(--muted)}
+.services{background:#f8fbfb}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}
+.card{background:#fff;overflow:hidden;border-radius:17px;border:1px solid var(--line);box-shadow:0 5px 16px #123b440e;transition:.22s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 35px #123b4420}
+.card img{height:190px;width:100%;object-fit:cover;display:block}
+.card-body{padding:23px}
+.card h3{font-size:1.25rem;margin:0 0 9px;letter-spacing:-.03em}
+.card p{margin:0;color:var(--muted);font-size:.93rem}
+.learn{display:inline-block;margin-top:15px;color:var(--teal);font-size:.88rem;font-weight:850}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.checks{background:#fff8ef;padding:34px;border-radius:23px}
+.checks h3{font-size:1.7rem;letter-spacing:-.05em;margin:0 0 18px}
+.checks p{border-bottom:1px solid #eedfca;margin:0;padding:12px 0;font-weight:700}
+.checks p:last-child{border:0}
+.process{background:var(--teal2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.step{background:#fff;border-radius:16px;padding:23px}
+.num{font-size:1.3rem;font-weight:900;color:var(--teal)}
+.step h3{font-size:1rem;margin:13px 0 5px}
+.step p{font-size:.86rem;color:var(--muted);margin:0}
+.reviews{background:#f8fbfb}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.review{background:#fff;padding:24px;border-radius:16px;border:1px solid var(--line)}
+.stars{color:#dc9a36;letter-spacing:2px}
+.review blockquote{margin:14px 0;color:var(--muted);font-size:.92rem;font-style:italic}
+.review b{font-size:.86rem}
+.faq-grid{display:grid;grid-template-columns:1fr .8fr;gap:58px}
+.faq details{border-bottom:1px solid var(--line);padding:17px 0}
+.faq summary{cursor:pointer;font-weight:800}
+.faq p{color:var(--muted);font-size:.9rem}
+.contactbox{background:var(--teal);color:white;border-radius:20px;padding:32px}
+.contactbox h2{font-size:2rem;line-height:1.08;letter-spacing:-.055em;margin:0 0 13px}
+.contactbox p{color:#d7f3f4}
+.contactbox a{display:block;margin:12px 0;font-weight:800}
+.map{height:300px;width:100%;border:0;display:block;filter:saturate(.8)}
+footer{background:#192b39;color:#d5e8eb;padding:43px 0 22px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+.foot h4{color:#fff;margin:0 0 10px}
+.foot p,.foot a{display:block;color:#b6c9cd;font-size:.86rem;margin:6px 0}
+.copy{border-top:1px solid #ffffff20;margin-top:28px;padding-top:18px;font-size:.78rem}
+.call{position:fixed;right:18px;bottom:18px;z-index:8}
+.modal{display:none;position:fixed;z-index:20;inset:0;padding:18px;background:#122b3299;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.modal-in{width:min(100%,480px);background:white;border-radius:18px;padding:28px;position:relative}
+.close{position:absolute;right:15px;top:10px;border:0;background:none;font-size:26px;cursor:pointer}
+.modal h2{margin:0}
+.modal label{display:block;font-size:.8rem;font-weight:800;margin-top:12px}
+.modal input,.modal select{width:100%;padding:11px;margin-top:4px;border:1px solid var(--line);border-radius:8px;font:inherit}
+.modal button{margin-top:18px;width:100%}
+@media(max-width:800px){header{height:68px}
+.links{display:none}
+.links.open{display:flex;position:absolute;top:68px;left:0;right:0;background:#fff;padding:18px 24px;flex-direction:column;align-items:stretch;box-shadow:0 12px 20px #123b4420}
+.hamb{display:block}
+.hero-in,.why,.faq-grid{grid-template-columns:1fr}
+.hero-in{padding:60px 0 32px;gap:0;min-height:0}
+.hero h1{font-size:3.5rem}
+.visual{height:330px}
+.trust .wrap,.steps{grid-template-columns:1fr 1fr}
+.cards,.review-grid{grid-template-columns:1fr}
+.why{gap:30px}
+.foot{grid-template-columns:1fr 1fr}
+section{padding:62px 0}
+.t1{right:0}
+.photo{left:10px}
+}
+
+/* Phone-first refinements: preserve comfortable gutters and avoid desktop-sized elements. */
+@media(max-width:800px){
+  .wrap{padding-left:20px;padding-right:20px} header{height:68px}.nav{gap:12px}.brand{min-width:0;font-size:.9rem}.brand>span:last-child{min-width:0}.brand small{font-size:.59rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.logo{width:35px;height:35px;border-radius:11px;flex:0 0 35px;font-size:1.4rem}
+  .links.open{padding:16px 20px 20px;gap:4px}.links.open a{padding:10px 4px}.links.open .button{margin-top:6px;padding:.8rem 1.1rem}.hamb{flex:0 0 44px;min-height:44px;padding:0}
+  .hero-in{padding:50px 0 28px;gap:14px}.eyebrow{font-size:.69rem;letter-spacing:.12em}.hero h1{font-size:clamp(2.75rem,13vw,3.8rem);line-height:.96;letter-spacing:-.07em;margin:15px 0 19px;overflow-wrap:break-word}.hero p{font-size:.98rem;margin-bottom:24px}.actions{gap:10px}.actions .button{flex:1;min-height:48px;padding:.75rem .8rem;font-size:.9rem}
+  .visual{height:278px;margin:4px -4px 0}.photo{inset:20px 4px 0;border-radius:21px}.tag{padding:8px 10px;border-radius:10px;font-size:.69rem}.t1{top:9px;right:0}.t2{bottom:8px;left:0}
+  .trust .wrap{padding-top:16px;padding-bottom:16px;gap:12px 8px}.trust div{display:flex;align-items:center;font-size:.76rem;line-height:1.25}.trust span{width:27px;height:27px;flex:0 0 27px;margin-right:6px}section{padding:54px 0}.heading h2{font-size:clamp(2rem,9.5vw,2.7rem);line-height:1.02;margin:9px 0 12px;letter-spacing:-.06em}.heading p{font-size:.96rem}
+  .cards,.review-grid{gap:15px;margin-top:27px}.card{border-radius:15px}.card:hover{transform:none}.card img{height:190px}.card-body{padding:20px}.why{gap:26px}.checks{padding:25px 21px;border-radius:18px}.checks h3{font-size:1.5rem}.checks p{padding:11px 0;font-size:.94rem}.steps{gap:12px;margin-top:27px}.step{padding:18px 16px;border-radius:14px}.step h3{margin:9px 0 4px}.step p{font-size:.82rem;line-height:1.45}.review{padding:20px}.faq-grid{gap:28px}.faq details{padding:15px 0}.contactbox{border-radius:18px;padding:26px 22px}.contactbox h2{font-size:1.8rem}.contactbox p{font-size:.92rem}.map{height:240px}.foot{grid-template-columns:1fr;gap:22px}.copy{margin-top:24px}.call{right:14px;bottom:14px;padding:.78rem 1rem;font-size:.88rem;box-shadow:0 8px 18px #17353a35}.modal{padding:12px;align-items:flex-end}.modal-in{border-radius:18px 18px 12px 12px;padding:25px 20px 22px;max-height:92vh;overflow:auto}
+}
+@media(max-width:360px){.wrap{padding-left:16px;padding-right:16px}.brand{font-size:.82rem}.brand small{font-size:.54rem}.logo{width:32px;height:32px;flex-basis:32px}.hero-in{padding-top:42px}.hero h1{font-size:2.7rem}.actions{display:grid;grid-template-columns:1fr}.visual{height:250px}.trust .wrap{gap:10px 5px}.trust div{font-size:.71rem}.steps{grid-template-columns:1fr}.step{padding:17px}.call{right:10px;bottom:10px}}
+</style>
+<style>
+/* Final phone-only safety gutter: keeps all copy clear of curved screens and narrow viewports. */
+@media screen and (max-width: 800px) {
+  html, body { max-width: 100%; overflow-x: hidden; }
+  .wrap { padding-left: max(28px, env(safe-area-inset-left)) !important; padding-right: max(28px, env(safe-area-inset-right)) !important; }
+  .hero .hero-in { padding-top: 56px !important; padding-bottom: 34px !important; }
+  .hero h1, .hero p, .heading h2, .heading p { max-width: 100%; overflow-wrap: anywhere; }
+  .hero h1 { font-size: clamp(2.55rem, 12.25vw, 3.35rem) !important; letter-spacing: -.065em !important; }
+  .visual { margin-left: 0 !important; margin-right: 0 !important; }
+}
+@media screen and (max-width: 360px) {
+  .wrap { padding-left: max(22px, env(safe-area-inset-left)) !important; padding-right: max(22px, env(safe-area-inset-right)) !important; }
+  .hero h1 { font-size: 2.5rem !important; }
+}
+</style>
+</head>
+<body>
+<div class="top">
+</div>
+<header>
+<nav class="wrap nav">
+<a class="brand" href="#home">
+<span class="logo">✚</span>
+<span>Micro Research Healthcare<small>Pathology & Diagnostic Center</small>
+</span>
+</a>
+<button class="hamb" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+<div class="links">
+<a href="#home">Home</a>
+<a href="#about">About Us</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact Us</a>
+<a href="#book" class="button">Book a Test</a>
+</div>
+</nav>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="wrap hero-in">
+<div>
+<div class="eyebrow">Pathology & diagnostic services</div>
+<h1>Health clarity,<br>delivered with <i>care.</i>
+</h1>
+<p>Micro Research Healthcare provides pathology and diagnostic services for the Pimpri-Chinchwad community.</p>
+<div class="actions">
+<a href="#book" class="button">Book a Test →</a>
+<a href="#services" class="button light">Explore services</a>
+</div>
+</div>
+<div class="visual">
+<div class="photo">
+<img src="lab-work.png" alt="Laboratory diagnostic work">
+</div>
+<div class="tag t1">
+<span class="check">✓</span> Diagnostic services</div>
+<div class="tag t2">
+<span class="check">✓</span> Pathology services</div>
+</div>
+</div>
+</section>
+<div class="trust">
+<div class="wrap">
+<div>
+<span>⌂</span>Free home sample collection</div>
+<div>
+<span>▤</span>Smart report</div>
+<div>
+<span>◉</span>Free consultation</div>
+<div>
+<span>◷</span>Open 24 hours</div>
+</div>
+</div>
+<section class="services" id="services">
+<div class="wrap">
+<div class="heading">
+<div class="eyebrow">Our services</div>
+<h2>Support for every step of your health journey.</h2>
+<p>Explore pathology and diagnostic services at Micro Research Healthcare.</p>
+</div>
+<div class="cards">
+<article class="card">
+<img src="blood_test.png" alt="Blood sample testing in a pathology laboratory">
+<div class="card-body">
+<h3>Blood Tests</h3>
+<p>Comprehensive blood analysis for various health parameters.</p>
+<a href="#book" class="learn">Book this service →</a>
+</div>
+</article>
+<article class="card">
+<img src="full_body_checkup.png" alt="Full body health checkup consultation">
+<div class="card-body">
+<h3>Full Body Checkup</h3>
+<p>Complete health assessment with detailed reports.</p>
+<a href="#book" class="learn">Book this service →</a>
+</div>
+</article>
+<article class="card">
+<img src="diagnostic_tests.png" alt="Diagnostic laboratory testing equipment and samples">
+<div class="card-body">
+<h3>Diagnostic Tests</h3>
+<p>Advanced diagnostic services for accurate diagnosis.</p>
+<a href="#book" class="learn">Book this service →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="wrap why">
+<div class="heading">
+<div class="eyebrow">About us</div>
+<h2>Diagnostics with the patient at the center.</h2>
+<p>Micro Research Healthcare is a pathology laboratory and diagnostic center serving the Pimpri-Chinchwad community. We aim to make diagnostic support more accessible and convenient.</p>
+</div>
+<div class="checks">
+<h3>Our service promise</h3>
+<p>✓ Free home sample collection</p>
+<p>✓ Quick and accurate results</p>
+<p>✓ Expert analysis and consultation</p>
+<p>✓ Affordable pricing</p>
+</div>
+</div>
+</section>
+<section class="process">
+<div class="wrap">
+<div class="heading">
+<div class="eyebrow">How it works</div>
+<h2>Simple from booking to report.</h2>
+<p>Get started in a few clear steps.</p>
+</div>
+<div class="steps">
+<div class="step">
+<div class="num">01</div>
+<h3>Book a test</h3>
+<p>Call, WhatsApp, or send a booking request.</p>
+</div>
+<div class="step">
+<div class="num">02</div>
+<h3>Collection</h3>
+<p>Choose home sample collection or visit the centre.</p>
+</div>
+<div class="step">
+<div class="num">03</div>
+<h3>Processing</h3>
+<p>Your sample proceeds through the diagnostic process.</p>
+</div>
+<div class="step">
+<div class="num">04</div>
+<h3>Report</h3>
+<p>Receive your report and ask for consultation if needed.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="reviews">
+<div class="wrap">
+<div class="heading">
+<div class="eyebrow">Patient feedback</div>
+<h2>Trusted in the community.</h2>
+<p>Micro Research Healthcare has a 5.0 Google rating from 9 reviews, according to the provided business listing.</p>
+</div>
+<div class="review-grid">
+<article class="review">
+<div class="stars">★★★★★</div>
+<blockquote>“Excellent service and very professional staff. Got my results quickly and the report was very detailed.”</blockquote>
+<b>Rahul Sharma</b>
+</article>
+<article class="review">
+<div class="stars">★★★★★</div>
+<blockquote>“Very convenient home collection service. The staff arrived on time and was extremely professional.”</blockquote>
+<b>Priya Patel</b>
+</article>
+<article class="review">
+<div class="stars">★★★★★</div>
+<blockquote>“Best diagnostic center in the area. Their team was helpful in understanding the results clearly.”</blockquote>
+<b>Amit Kumar</b>
+</article>
+</div>
+</div>
+</section>
+<section class="faq" id="contact">
+<div class="wrap faq-grid">
+<div>
+<div class="heading">
+<div class="eyebrow">Frequently asked questions</div>
+<h2>Helpful information before booking.</h2>
+</div>
+<details open>
+<summary>How can I book a home collection?</summary>
+<p>Call 7083042147 or send a WhatsApp message. The team can help confirm your request.</p>
+</details>
+<details>
+<summary>How long does it take to get results?</summary>
+<p>Result timing can vary by test. Contact the centre for information about your specific test.</p>
+</details>
+<details>
+<summary>Can I get help with an existing report?</summary>
+<p>Contact the centre on 7083042147 for assistance with an existing report.</p>
+</details>
+</div>
+<aside class="contactbox">
+<h2>Let’s talk about your test.</h2>
+<p>Call or WhatsApp Micro Research Healthcare to ask about a test, booking, or report.</p>
+<a href="tel:7083042147">☎ 7083042147</a>
+<a href="https://wa.me/917083042147">◉ WhatsApp us</a>
+<p>SAI AMBIENCE & SAI VISION, Kunal Icon Rd, near Govind Garden Road, Kate Vasti Pimple Saudagar, Pimpri-Chinchwad, Maharashtra 411027</p>
+</aside>
+</div>
+</section>
+<iframe class="map" title="Micro Research Healthcare map" src="https://www.google.com/maps?q=Micro+Research+Healthcare+Pimple+Saudagar&output=embed" loading="lazy">
+</iframe>
+</main>
+<a href="tel:7083042147" class="button call">☎ Call now</a>
+<footer>
+<div class="wrap foot">
+<div>
+<div class="brand" style="color:#fff">
+<span class="logo">✚</span>
+<span>Micro Research Healthcare<small style="color:#b6c9cd">Pathology & Diagnostic Center</small>
+</span>
+</div>
+<p>Pathology and diagnostic services in Pimpri-Chinchwad.</p>
+</div>
+<div>
+<h4>Quick links</h4>
+<a href="#home">Home</a>
+<a href="#about">About Us</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact Us</a>
+</div>
+<div>
+<h4>Contact</h4>
+<a href="tel:7083042147">7083042147</a>
+<a href="https://wa.me/917083042147">WhatsApp us</a>
+<a href="#book">Book a test</a>
+</div>
+</div>
+<div class="wrap copy">© <span id="year">
+</span> Micro Research Healthcare. All rights reserved.</div>
+</footer>
+<div class="modal" id="book" role="dialog" aria-modal="true" aria-labelledby="book-title">
+<div class="modal-in">
+<button class="close" aria-label="Close">×</button>
+<h2 id="book-title">Book a test</h2>
+<p>Send a booking request to the centre.</p>
+<form id="form">
+<label>Full name<input required name="name">
+</label>
+<label>Phone number<input required type="tel" name="phone">
+</label>
+<label>Test required<select name="test">
+<option>Blood Tests</option>
+<option>Full Body Checkup</option>
+<option>Diagnostic Tests</option>
+<option>Home Collection</option>
+<option>Not sure / need help</option>
+</select>
+</label>
+<label>Preferred date<input type="date" name="date">
+</label>
+<button class="button">Send booking request →</button>
+</form>
+</div>
+</div>
+<script>document.getElementById('year').textContent=new Date().getFullYear();const m=document.getElementById('book');document.querySelectorAll('a[href="#book"]').forEach(a=>a.onclick=e=>{e.preventDefault();m.classList.add('open')});document.querySelector('.close').onclick=()=>m.classList.remove('open');m.onclick=e=>{if(e.target===m)m.classList.remove('open')};document.getElementById('form').onsubmit=e=>{e.preventDefault();let d=new FormData(e.target);location.href='mailto:?subject='+encodeURIComponent('Test booking request')+'&body='+encodeURIComponent('Name: '+d.get('name')+'\nPhone: '+d.get('phone')+'\nTest: '+d.get('test')+'\nPreferred date: '+(d.get('date')||'Not specified'))};</script>
+</body>
+</html>
